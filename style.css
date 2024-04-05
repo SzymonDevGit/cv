@@ -1,0 +1,318 @@
+body {
+	background: linear-gradient(-45deg, #ffc300, #ff5733, #c70039, #900c3e, #571845);
+	background-size: 600% 600%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+	color: white;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.container {
+  min-height: 100vh;
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  background-color: var(--complimentary-color);
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ position: absolute;
+}
+
+h1 {
+  font-size: 4vw;
+  color: var(--primary-color);
+  transform: translateY(-600px);
+  animation: 1.2s slideIn ease-in-out forwards 1s;
+  z-index: 1;
+  opacity: 0;
+  position: absolute;
+}
+
+.textName {
+	z-index: 0;
+	position: absolute;
+	top: 10px;
+	background-color: rgba(0,0,0,.1);
+	padding: 0px 10px 5px 10px;
+	border-radius: 30px;
+}
+
+h1::before {
+    content: '';
+    width: 0%;
+    height: 76px;
+    background-color: var(--secondary-color);
+    position: absolute;
+    bottom: -10px;
+    animation: 1s underline ease-in-out forwards 2s;
+    mix-blend-mode: screen;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--secondary-color);
+    transform: scale(.5);
+    animation: .5s slideIn ease-in-out forwards, 1s skewBg ease-in-out;
+}
+
+@keyframes skewBg {
+  0% {
+    transform: scale(.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes underline {
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes slideIn {
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.buttonRound {
+	width: 150px;
+	height: 150px;
+	text-align: center;
+	font-size: 16px;
+	cursor: pointer;  
+	z-index: 2;
+	border-radius: 100%;
+	position: absolute;
+	transition: all .3s ease-in-out;
+}
+
+.skillPos2 {
+	border-radius: 100%;
+	transform: translate3d(-75px, 200px, 0px);
+	transition: all .3s ease-in-out;
+	position: absolute;
+}
+
+.educationPos2 {
+	border-radius: 100%;
+	transform: translate3d(75px, 550px, 0px);
+	transition: all .3s ease-in-out;
+	position: absolute;
+}
+
+.experiencePos2 {
+	border-radius: 100%;
+	transform: translate3d(50px, 375px, 0px);
+	transition: all .3s ease-in-out;
+	position: absolute;
+}
+
+.sourceCodePos2 {
+	border-radius: 100%;
+	transform: translate3d(-50px, 375px, 0px);
+	transition: all .3s ease-in-out;
+	position: absolute;
+}
+
+.mainPos2 {
+	border-radius: 100%;
+	transform: translate3d(0px, -1000px, 0px);
+	transition: all .3s ease-in-out;
+	position: absolute;
+}
+
+.buttonRound:hover {
+	transition: all .3s ease-in-out;
+	transform: scale(1.1);
+}
+
+.buttonMain {
+	display: block;
+	bottom: -75px;
+	right: -75px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.buttonSkills {
+	background-color: rgba(0, 0, 0, 0);
+	top: 125px;
+	width: 100px;
+	height: 100px;
+	right: -50px;
+}
+
+.buttonEducation {
+	background-color: rgba(0, 0, 0, 0);
+	bottom: 125px;
+	width: 100px;
+	height: 100px;
+	right: -50px;
+}
+
+.buttonSourceCode {
+	background-color: rgba(0, 0, 0, 0);
+	bottom: -50px;
+	width: 100px;
+	height: 100px;
+	right: 125px;
+}
+
+.buttonExperience {
+	background-color: rgba(0, 0, 0, 0);
+	bottom: -50px;
+	width: 100px;
+	height: 100px;
+	left: 125px;
+}
+
+.selectedSceneSkills {
+	position: absolute;
+	transition: all .3s ease-in-out;
+	transform: scale(1.1);
+	border-radius: 100%;
+	transform: translate3d(-75px, 125px, 0px);
+	transition: all .3s ease-in-out;
+	position: absolute;
+}
+
+.selectedSceneEducation {
+	position: absolute;
+	transition: all .3s ease-in-out;
+	transform: scale(1.1);
+	border-radius: 100%;
+	transform: translate3d(75px, 475px, 0px);
+	transition: all .3s ease-in-out;
+	position: absolute;
+}
+
+.selectedSceneExperience {
+	position: absolute;
+	transition: all .3s ease-in-out;
+	transform: scale(1.1);
+	border-radius: 100%;
+	transform: translate3d(50px, 300px, 0px);
+	transition: all .3s ease-in-out;
+	position: absolute;
+}
+.selectedSceneSourceCode {
+	position: absolute;
+	transition: all .3s ease-in-out;
+	transform: scale(1.1);
+	border-radius: 100%;
+	transform: translate3d(-50px, 300px, 0px);
+	transition: all .3s ease-in-out;
+	position: absolute;
+}
+
+.objectHidden {
+	visibility: hidden;
+}
+
+.objectVisible {
+	visibility: visible;
+}
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.zoomOut {
+  -webkit-animation-name: zoomOut;
+  animation-name: zoomOut;
+}
+
+@font-face {
+font-family: AgencyFB;
+src: url("http://uncutbeatz.com/clear/fonts/AGENCYR.TTF");
+}
+
+h2 {
+	font-family:AgencyFB;
+}
