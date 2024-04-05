@@ -1,3 +1,5 @@
+// Finds the HTML elements by their ID to then manipulate with code.
+
 var mainButton = document.getElementById("mainButton");
 var skillsButton = document.getElementById("skillsButton");
 var educationButton = document.getElementById("educationButton");
@@ -7,6 +9,8 @@ var textBox = document.getElementById("textBox");
 
 var toggleVisible = false;
 var toggleSkills = false;
+
+// Changes position of all buttons and selects the one that was pressed.
 
 sourceCodeButton.onclick = function() {
 	if (toggleSkills == false) {
@@ -56,6 +60,8 @@ skillsButton.onclick = function() {
 	}
 }
 
+// Allows toggling of the secondary buttons.
+
 mainButton.onclick = function() {
 	if (toggleVisible == false) {
 		buttonAppear(skillsButton);
@@ -73,11 +79,15 @@ mainButton.onclick = function() {
 	}
 }
 
+// Makes the main text box appear.
+
 function textBoxToggleOn() {
 	textBox.classList.remove("objectHidden");
 	textBox.classList.add("animated");
 	textBox.classList.add("zoomIn");
 }
+
+// Makes the secondary buttons appear upon clicking the main one.
 
 function buttonAppear(idButton) {
 	idButton.classList.remove("objectHidden");
@@ -91,6 +101,8 @@ function buttonAppear(idButton) {
 	}, 600);
 }
 
+// Function used to make the secondary buttons vanish upon the main button being pressed again.
+
 function buttonDisappear(idButton) {
 	idButton.classList.remove("objectVisible");
 	idButton.classList.remove("animated");
@@ -98,6 +110,10 @@ function buttonDisappear(idButton) {
 	idButton.classList.add("animated");
 	idButton.classList.add("zoomOut");
 }
+
+//Functions to create the animation and select the buttons.
+// "*Change" makes the button go into the second position when the main button is pressed.
+// "*Select" enables the animation and activates the button if they are ever clicked.
 
 function skillPosChange(idButton) {
 	idButton.classList.add("skillPos2");
