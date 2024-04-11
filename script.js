@@ -7,6 +7,9 @@ var sourceCodeButton = document.getElementById("sourceCodeButton");
 var experienceButton = document.getElementById("experienceButton");
 var textBox = document.getElementById("textBox");
 
+var textBodySkills = document.getElementById("textBodySkills");
+var textBodySourceCode = document.getElementById("textBodySourceCode");
+
 var toggleVisible = false;
 var toggleSkills = false;
 
@@ -14,6 +17,7 @@ var toggleSkills = false;
 
 sourceCodeButton.onclick = function() {
 	if (toggleSkills == false) {
+		textReset()
 		sourceCodePosChange(sourceCodeButton);
 		experiencePosChange(experienceButton);
 		educationPosChange(educationButton);
@@ -21,11 +25,13 @@ sourceCodeButton.onclick = function() {
 		mainButton.classList.add("mainPos2")
 		sourceCodePosSelect(sourceCodeButton)
 		textBoxToggleOn()
+		buttonAppear(textBodySourceCode)
 	}
 }
 
 experienceButton.onclick = function() {
 	if (toggleSkills == false) {
+		textReset()
 		sourceCodePosChange(sourceCodeButton);
 		experiencePosChange(experienceButton);
 		educationPosChange(educationButton);
@@ -38,6 +44,7 @@ experienceButton.onclick = function() {
 
 educationButton.onclick = function() {
 	if (toggleSkills == false) {
+		buttonDisappear(textBodySkills)
 		sourceCodePosChange(sourceCodeButton);
 		experiencePosChange(experienceButton);
 		educationPosChange(educationButton);
@@ -50,6 +57,7 @@ educationButton.onclick = function() {
 
 skillsButton.onclick = function() {
 	if (toggleSkills == false) {
+		textReset()
 		sourceCodePosChange(sourceCodeButton);
 		experiencePosChange(experienceButton);
 		educationPosChange(educationButton);
@@ -57,6 +65,7 @@ skillsButton.onclick = function() {
 		mainButton.classList.add("mainPos2")
 		skillPosSelect(skillsButton)
 		textBoxToggleOn()
+		buttonAppear(textBodySkills)
 	}
 }
 
@@ -98,7 +107,7 @@ function buttonAppear(idButton) {
 	idButton.classList.add("zoomIn");
 	setTimeout(function(){
 		idButton.classList.remove("animated");
-	}, 600);
+	}, 900);
 }
 
 // Function used to make the secondary buttons vanish upon the main button being pressed again.
@@ -109,6 +118,9 @@ function buttonDisappear(idButton) {
 	idButton.classList.remove("zoomIn");
 	idButton.classList.add("animated");
 	idButton.classList.add("zoomOut");
+	setTimeout(function(){
+		idButton.classList.add("objectHidden");
+	}, 900);
 }
 
 //Functions to create the animation and select the buttons.
@@ -157,4 +169,9 @@ function sourceCodePosChange(idButton) {
 function sourceCodePosSelect(idButton) {
 	idButton.classList.remove("sourceCodePos2");
 	idButton.classList.add("selectedSceneSourceCode");
+}
+
+function textReset() {
+	buttonDisappear(textBodySkills)
+	buttonDisappear(textBodySourceCode)
 }
